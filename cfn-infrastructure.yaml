@@ -16,6 +16,9 @@ Parameters:
     AllowedPattern: "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})"
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
+  KmsKeyIdArn:
+    Type: String
+
   ImageId:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
     Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
@@ -270,7 +273,7 @@ Resources:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: 'aws:kms'
-              KMSMasterKeyID: !Sub arn:aws:kms:us-east-1:${AWS::AccountId}:key/a15b1083-fb84-4a0d-be89-1aa317aac999
+              KMSMasterKeyID: !Ref KmsKeyIdArn
       OwnershipControls:
         Rules:
           - ObjectOwnership: BucketOwnerPreferred
