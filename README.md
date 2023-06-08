@@ -1,1 +1,1 @@
-# code training ec2 codedeploy
+# code workshop ec2 codedeploy
