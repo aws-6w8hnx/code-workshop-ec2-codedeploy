@@ -1,1 +1,1 @@
-# codesuite-cd-ec2
+# code training ec2 codedeploy
