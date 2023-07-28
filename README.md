@@ -62,6 +62,11 @@ When you create a new deployment, you notice the new deployment status shows in 
 * Events shows in Pending:
 <img width="939" alt="image" src="https://github.com/aws-k68pex/code-training-ec2-deploy/assets/104741984/f7f4b01e-00a6-4a81-82b6-7e92888102e1">
 
+After a while, it will turn an Error below:
+```
+CodeDeploy agent was not able to receive the lifecycle event. Check the CodeDeploy agent logs on your host and make sure the agent is running and can connect to the CodeDeploy server.
+```
+
 ### Possibe reason:
 1. CodeDeploy Agent is not installed or running,
 2. EC2 is stopped or not existing,
