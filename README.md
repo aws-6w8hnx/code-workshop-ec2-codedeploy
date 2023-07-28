@@ -64,7 +64,8 @@ When you create a new deployment, you notice the new deployment status shows in 
 
 After a while, it will turn an Error below:
 ```
-CodeDeploy agent was not able to receive the lifecycle event. Check the CodeDeploy agent logs on your host and make sure the agent is running and can connect to the CodeDeploy server.
+CodeDeploy agent was not able to receive the lifecycle event.
+Check the CodeDeploy agent logs on your host and make sure the agent is running and can connect to the CodeDeploy server.
 ```
 
 ### Possibe reason:
