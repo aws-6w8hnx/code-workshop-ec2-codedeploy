@@ -57,9 +57,9 @@ https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configuration
 
 ## Troubleshooting
 When you create a new deployment, you notice the new deployment status shows in progress and all events shows in Pending, why?
-* Status: In progress
-<img width="938" alt="image" src="https://github.com/aws-k68pex/code-training-ec2-deploy/assets/104741984/bd18e572-d187-4634-8969-95d8c20f6795">
-* Events shows in Pending:
+* Status: In progress  
+<img width="750" alt="image" src="https://github.com/aws-6w8hnx/code-workshop-ec2-codedeploy/blob/main/static_image/codedeploy_stop_agent_stuck_in_progress.png">
+* Events shows in Pending:  
 <img width="750" alt="image" src="https://github.com/aws-6w8hnx/code-workshop-ec2-codedeploy/blob/main/static_image/codedeploy_stop_agent_stuck_in_all_pending.png">
 
 After a while, it will turn an Error below:
