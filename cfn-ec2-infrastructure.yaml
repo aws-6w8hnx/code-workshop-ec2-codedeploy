@@ -30,6 +30,10 @@ Parameters:
     Type: String
     Default: CodeDeployDemo
 
+  ApplicationName:
+    Type: String
+    Default: cfn-cd-ec2-wordpress-app
+
 Resources:
   CodeDeployServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -203,7 +207,7 @@ Resources:
 
             cd /tmp/WordPress && \
             aws deploy push \
-              --application-name !Ref CodeDeployApplication \
+              --application-name !Ref ApplicationName \
               --s3-location s3://codedeploydemo-${AWS::AccountId}-${AWS::Region}-s3/WordPressApp.zip \
               --ignore-hidden-files \
               --region ${AWS::Region}
@@ -306,7 +310,7 @@ Resources:
   CodeDeployApplication: 
     Type: AWS::CodeDeploy::Application
     Properties:
-      ApplicationName: !Sub cfn-cd-ec2-${AWS::AccountId}-${AWS::Region}-wordpress-app
+      ApplicationName: !Ref ApplicationName
       ComputePlatform: Server  ### Allowed values: ECS | Lambda | Server
 
   CodeDeployDeploymentGroup:
