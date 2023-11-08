@@ -306,7 +306,7 @@ Resources:
   CodeDeployApplication: 
     Type: AWS::CodeDeploy::Application
     Properties:
-      ApplicationName: WordPress_App
+      ApplicationName: !Sub cfn-cd-ec2-${AWS::AccountId}-${AWS::Region}-wordpress-app
       ComputePlatform: Server  ### Allowed values: ECS | Lambda | Server
 
   CodeDeployDeploymentGroup:
