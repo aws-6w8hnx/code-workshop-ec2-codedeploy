@@ -21,7 +21,7 @@ Parameters:
 
   ImageId:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 #/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
 
   Ec2TagKey:
     Type: String
@@ -29,10 +29,6 @@ Parameters:
   Ec2TagValue:
     Type: String
     Default: CodeDeployDemo
-
-  ApplicationName:
-    Type: String
-    Default: cfn-cd-ec2-wordpress-app
 
 Resources:
   CodeDeployServerSecurityGroup:
@@ -207,7 +203,7 @@ Resources:
 
             cd /tmp/WordPress && \
             aws deploy push \
-              --application-name !Ref ApplicationName \
+              --application-name codeDeploy_ec2_wordpress_app \
               --s3-location s3://codedeploydemo-${AWS::AccountId}-${AWS::Region}-s3/WordPressApp.zip \
               --ignore-hidden-files \
               --region ${AWS::Region}
@@ -310,7 +306,7 @@ Resources:
   CodeDeployApplication: 
     Type: AWS::CodeDeploy::Application
     Properties:
-      ApplicationName: !Ref ApplicationName
+      ApplicationName: codeDeploy_ec2_wordpress_app
       ComputePlatform: Server  ### Allowed values: ECS | Lambda | Server
 
   CodeDeployDeploymentGroup:
