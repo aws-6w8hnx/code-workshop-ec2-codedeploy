@@ -21,7 +21,7 @@ Parameters:
 
   ImageId:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+    Default: /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2
 
   Ec2TagKey:
     Type: String
@@ -203,7 +203,7 @@ Resources:
 
             cd /tmp/WordPress && \
             aws deploy push \
-              --application-name WordPress_App \
+              --application-name !Ref CodeDeployApplication \
               --s3-location s3://codedeploydemo-${AWS::AccountId}-${AWS::Region}-s3/WordPressApp.zip \
               --ignore-hidden-files \
               --region ${AWS::Region}
