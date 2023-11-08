@@ -60,7 +60,7 @@ When you create a new deployment, you notice the new deployment status shows in 
 * Status: In progress
 <img width="938" alt="image" src="https://github.com/aws-k68pex/code-training-ec2-deploy/assets/104741984/bd18e572-d187-4634-8969-95d8c20f6795">
 * Events shows in Pending:
-<img width="939" alt="image" src="https://github.com/aws-k68pex/code-training-ec2-deploy/assets/104741984/f7f4b01e-00a6-4a81-82b6-7e92888102e1">
+<img width="750" alt="image" src="https://github.com/aws-6w8hnx/code-workshop-ec2-codedeploy/blob/main/static_image/codedeploy_stop_agent_stuck_in_all_pending.png">
 
 After a while, it will turn an Error below:
 ```
