@@ -73,3 +73,4 @@ agent is running and can connect to the CodeDeploy server.
 1. CodeDeploy Agent is not installed or running,
 2. EC2 is stopped or not existing,
 3. Ec2TagFilters set incorrectly to cannot find correct EC2.
+4. Network egress 443 blocked, cannot be reach to endpoint
