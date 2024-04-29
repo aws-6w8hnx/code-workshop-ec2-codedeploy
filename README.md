@@ -36,7 +36,7 @@ aws deploy push \
     --application-name WordPress_App \
     --ignore-hidden-files \
     --region us-east-1 \
-    --s3-location s3://codedeploydemo-117645918752-us-east-1-s3/WordPressApp.zip
+    --s3-location s3://codedeploydemo-<account-id>-us-east-1-s3/WordPressApp.zip
 
 # Create a new deployment
 aws deploy create-deployment \
@@ -44,7 +44,7 @@ aws deploy create-deployment \
     --deployment-config-name CodeDeployDefault.OneAtATime \
     --deployment-group-name CodeDeployDemoDeploymentGroup \
     --region us-east-1 \
-    --s3-location bucket=codedeploydemo-117645918752-us-east-1-s3,bundleType=zip,key=WordPressApp.zip
+    --s3-location bucket=codedeploydemo-<account-id>-us-east-1-s3,bundleType=zip,key=WordPressApp.zip
 ```
 
 8. Open incognito Window, and browse http://ec2-public-ip/WordPress.
